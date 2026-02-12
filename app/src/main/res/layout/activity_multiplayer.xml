@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <!-- BACK BUTTON -->
+        <ImageView
+            android:id="@+id/imageViewBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="15dp"
+            android:padding="10dp"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserratsemibold"
+            android:text="Tic Tac Teo"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+
+    <!-- BOARD CONTAINER -->
+    <FrameLayout
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true">
+
+        <!-- BOARD -->
+        <FrameLayout
+            android:layout_width="300dp"
+            android:layout_height="300dp">
+
+            <LinearLayout
+                android:id="@+id/boardLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- ROW BUILDER FUNCTIONALLY REPEATED 3 TIMES -->
+                <!-- ROW 1 -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <!-- CELL 0 -->
+                    <FrameLayout
+                        android:layout_width="100dp"
+                        android:layout_height="100dp">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/button0"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/cell_bg" />
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/lottie0"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            android:visibility="gone"
+                            app:lottie_autoPlay="false"
+                            app:lottie_loop="false" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="100dp"
+                        android:layout_height="100dp">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/button1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/cell_bg" />
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/lottie1"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            android:visibility="gone" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="100dp"
+                        android:layout_height="100dp">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/button2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/cell_bg" />
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/lottie2"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            android:visibility="gone" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <!-- ROW 2 -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <FrameLayout
+                        android:layout_width="100dp"
+                        android:layout_height="100dp">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/button3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/cell_bg" />
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/lottie3"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            android:visibility="gone" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="100dp"
+                        android:layout_height="100dp">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/button4"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/cell_bg" />
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/lottie4"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            android:visibility="gone" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="100dp"
+                        android:layout_height="100dp">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/button5"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/cell_bg" />
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/lottie5"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            android:visibility="gone" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <!-- ROW 3 -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <FrameLayout
+                        android:layout_width="100dp"
+                        android:layout_height="100dp">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/button6"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/cell_bg" />
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/lottie6"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            android:visibility="gone" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="100dp"
+                        android:layout_height="100dp">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/button7"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/cell_bg" />
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/lottie7"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            android:visibility="gone" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="100dp"
+                        android:layout_height="100dp">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/button8"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/cell_bg" />
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/lottie8"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            android:visibility="gone" />
+                    </FrameLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- KEEP YOUR EXISTING GRID LINES + WIN LINE + WINNER TEXT HERE -->
+            <!-- (unchanged from your working version) -->
+
+        </FrameLayout>
+
+        <!-- 4 FULL STRAIGHT GRID LINES -->
+
+        <!-- Vertical Line 1 -->
+        <View
+            android:id="@+id/verticalLine1"
+            android:layout_width="4dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:layout_marginStart="100dp"
+            android:background="@drawable/line1" />
+
+        <!-- Vertical Line 2 -->
+        <View
+            android:id="@+id/verticalLine2"
+            android:layout_width="4dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:layout_marginStart="200dp"
+            android:background="@drawable/line1" />
+
+        <!-- Horizontal Line 1 -->
+        <View
+            android:id="@+id/horizontalLine1"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_gravity="top"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/line1" />
+
+        <!-- Horizontal Line 2 -->
+        <View
+            android:id="@+id/horizontalLine2"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_gravity="top"
+            android:layout_marginTop="200dp"
+            android:background="@drawable/line1" />
+
+        <!-- WIN LINE (UNCHANGED) -->
+        <View
+            android:id="@+id/winLine"
+            android:layout_width="0dp"
+            android:layout_height="6dp"
+            android:layout_gravity="center"
+            android:background="@drawable/line2"
+            android:visibility="invisible" />
+
+
+    </FrameLayout>
+
+    <!-- RESET BUTTON -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonReset"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/button_bg"
+        android:text="@string/reset"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
