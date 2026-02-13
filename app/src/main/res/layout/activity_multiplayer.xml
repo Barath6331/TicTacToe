@@ -7,6 +7,7 @@
     android:background="@color/black">
 
     <LinearLayout
+        android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
@@ -28,267 +29,84 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserratsemibold"
-            android:text="Tic Tac Teo"
+            android:text="Tic Tac Toe"
             android:textColor="@color/white"
-            android:textSize="15dp" />
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <!-- GRID SIZE SELECTOR -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn3x3"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="3x3"
+            android:background="@drawable/button_bg"
+            android:textColor="@color/white"
+            android:layout_marginEnd="8dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn6x6"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="6x6"
+            android:background="@drawable/button_bg"
+            android:textColor="@color/white"
+            android:layout_marginEnd="8dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn9x9"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="9x9"
+            android:background="@drawable/button_bg"
+            android:textColor="@color/white"/>
+
     </LinearLayout>
 
 
     <!-- BOARD CONTAINER -->
     <FrameLayout
+        android:id="@+id/boardContainer"
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_centerInParent="true">
 
-        <!-- BOARD -->
+        <!-- GRID for Buttons -->
+        <!-- We use a GridLayout to hold the dynamically generated cells -->
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alignmentMode="alignMargins"
+            android:columnOrderPreserved="false"
+            android:useDefaultMargins="false" />
+
+        <!-- LINES CONTAINER -->
+        <!-- Holds the dynamically generated grid lines -->
         <FrameLayout
-            android:layout_width="300dp"
-            android:layout_height="300dp">
-
-            <LinearLayout
-                android:id="@+id/boardLayout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <!-- ROW BUILDER FUNCTIONALLY REPEATED 3 TIMES -->
-                <!-- ROW 1 -->
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <!-- CELL 0 -->
-                    <FrameLayout
-                        android:layout_width="100dp"
-                        android:layout_height="100dp">
-
-                        <androidx.appcompat.widget.AppCompatButton
-                            android:id="@+id/button0"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/cell_bg" />
-
-                        <com.airbnb.lottie.LottieAnimationView
-                            android:id="@+id/lottie0"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_gravity="center"
-                            android:visibility="gone"
-                            app:lottie_autoPlay="false"
-                            app:lottie_loop="false" />
-                    </FrameLayout>
-
-                    <FrameLayout
-                        android:layout_width="100dp"
-                        android:layout_height="100dp">
-
-                        <androidx.appcompat.widget.AppCompatButton
-                            android:id="@+id/button1"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/cell_bg" />
-
-                        <com.airbnb.lottie.LottieAnimationView
-                            android:id="@+id/lottie1"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_gravity="center"
-                            android:visibility="gone" />
-                    </FrameLayout>
-
-                    <FrameLayout
-                        android:layout_width="100dp"
-                        android:layout_height="100dp">
-
-                        <androidx.appcompat.widget.AppCompatButton
-                            android:id="@+id/button2"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/cell_bg" />
-
-                        <com.airbnb.lottie.LottieAnimationView
-                            android:id="@+id/lottie2"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_gravity="center"
-                            android:visibility="gone" />
-                    </FrameLayout>
-                </LinearLayout>
-
-                <!-- ROW 2 -->
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <FrameLayout
-                        android:layout_width="100dp"
-                        android:layout_height="100dp">
-
-                        <androidx.appcompat.widget.AppCompatButton
-                            android:id="@+id/button3"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/cell_bg" />
-
-                        <com.airbnb.lottie.LottieAnimationView
-                            android:id="@+id/lottie3"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_gravity="center"
-                            android:visibility="gone" />
-                    </FrameLayout>
-
-                    <FrameLayout
-                        android:layout_width="100dp"
-                        android:layout_height="100dp">
-
-                        <androidx.appcompat.widget.AppCompatButton
-                            android:id="@+id/button4"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/cell_bg" />
-
-                        <com.airbnb.lottie.LottieAnimationView
-                            android:id="@+id/lottie4"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_gravity="center"
-                            android:visibility="gone" />
-                    </FrameLayout>
-
-                    <FrameLayout
-                        android:layout_width="100dp"
-                        android:layout_height="100dp">
-
-                        <androidx.appcompat.widget.AppCompatButton
-                            android:id="@+id/button5"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/cell_bg" />
-
-                        <com.airbnb.lottie.LottieAnimationView
-                            android:id="@+id/lottie5"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_gravity="center"
-                            android:visibility="gone" />
-                    </FrameLayout>
-                </LinearLayout>
-
-                <!-- ROW 3 -->
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <FrameLayout
-                        android:layout_width="100dp"
-                        android:layout_height="100dp">
-
-                        <androidx.appcompat.widget.AppCompatButton
-                            android:id="@+id/button6"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/cell_bg" />
-
-                        <com.airbnb.lottie.LottieAnimationView
-                            android:id="@+id/lottie6"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_gravity="center"
-                            android:visibility="gone" />
-                    </FrameLayout>
-
-                    <FrameLayout
-                        android:layout_width="100dp"
-                        android:layout_height="100dp">
-
-                        <androidx.appcompat.widget.AppCompatButton
-                            android:id="@+id/button7"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/cell_bg" />
-
-                        <com.airbnb.lottie.LottieAnimationView
-                            android:id="@+id/lottie7"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_gravity="center"
-                            android:visibility="gone" />
-                    </FrameLayout>
-
-                    <FrameLayout
-                        android:layout_width="100dp"
-                        android:layout_height="100dp">
-
-                        <androidx.appcompat.widget.AppCompatButton
-                            android:id="@+id/button8"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/cell_bg" />
-
-                        <com.airbnb.lottie.LottieAnimationView
-                            android:id="@+id/lottie8"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_gravity="center"
-                            android:visibility="gone" />
-                    </FrameLayout>
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <!-- KEEP YOUR EXISTING GRID LINES + WIN LINE + WINNER TEXT HERE -->
-            <!-- (unchanged from your working version) -->
-
-        </FrameLayout>
-
-        <!-- 4 FULL STRAIGHT GRID LINES -->
-
-        <!-- Vertical Line 1 -->
-        <View
-            android:id="@+id/verticalLine1"
-            android:layout_width="4dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            android:layout_marginStart="100dp"
-            android:background="@drawable/line1" />
-
-        <!-- Vertical Line 2 -->
-        <View
-            android:id="@+id/verticalLine2"
-            android:layout_width="4dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            android:layout_marginStart="200dp"
-            android:background="@drawable/line1" />
-
-        <!-- Horizontal Line 1 -->
-        <View
-            android:id="@+id/horizontalLine1"
+            android:id="@+id/linesContainer"
             android:layout_width="match_parent"
-            android:layout_height="4dp"
-            android:layout_gravity="top"
-            android:layout_marginTop="100dp"
-            android:background="@drawable/line1" />
+            android:layout_height="match_parent" />
 
-        <!-- Horizontal Line 2 -->
-        <View
-            android:id="@+id/horizontalLine2"
-            android:layout_width="match_parent"
-            android:layout_height="4dp"
-            android:layout_gravity="top"
-            android:layout_marginTop="200dp"
-            android:background="@drawable/line1" />
-
-        <!-- WIN LINE (UNCHANGED) -->
+        <!-- WIN LINE -->
         <View
             android:id="@+id/winLine"
             android:layout_width="0dp"
             android:layout_height="6dp"
-            android:layout_gravity="center"
+            android:layout_gravity="top|start"
             android:background="@drawable/line2"
-            android:visibility="invisible" />
-
+            android:visibility="invisible"
+            android:transformPivotX="0dp"
+            android:transformPivotY="3dp"/>
+        <!-- PivotY = half height for rotation -->
 
     </FrameLayout>
 
